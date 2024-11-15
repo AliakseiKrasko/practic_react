@@ -3,6 +3,7 @@ import {KeyboardEvent} from 'react';
 import './App.css';
 import {Message} from './Message';
 import {OnOf} from './components/onOf/OnOf';
+import {Rating} from './components/rating/Rating';
 
 type Task = {
     id: number
@@ -14,15 +15,16 @@ function App() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [newTasks, setNewTasks] = useState('');
 
-    const onChangeHandler  = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setNewTasks(e.currentTarget.value);
     }
 
     const addTaskHandler = () => {
         if (newTasks.trim() !== "") {
             const newTask: Task = {id: tasks.length + 1, name: newTasks};
-            setTasks ([newTask, ...tasks])
-            setNewTasks("")        }
+            setTasks([newTask, ...tasks])
+            setNewTasks("")
+        }
 
     }
 
@@ -73,7 +75,7 @@ function App() {
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>{task.name}
-                        <button onClick={()=>removeTask(task.id)} >Remove Message</button>
+                        <button onClick={() => removeTask(task.id)}>Remove Message</button>
                     </li>
 
                 ))}
@@ -85,13 +87,13 @@ function App() {
                 <button onClick={buttonResetHandler}>Reset</button>
             </div>
             {messages.map((message) => (
-                <Message id={message.id} title={message.title} work={message.work} />
+                <Message id={message.id} title={message.title} work={message.work}/>
             ))}
-        <OnOf />
-        <OnOf />
-        <OnOf />
-        <OnOf />
-
+            <OnOf/>
+            <OnOf/>
+            <OnOf/>
+            <OnOf/>
+            <Rating/>
         </div>
     );
 }
