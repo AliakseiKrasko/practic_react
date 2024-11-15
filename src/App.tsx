@@ -93,9 +93,21 @@ function App() {
             <OnOf/>
             <OnOf/>
             <OnOf/>
-            <Rating/>
+            <RatingTittle title={"Hello"}/>
+            <RatingTittle title={"Hello world"}/>
+
+            <Rating value={0} />
+            <Rating value={1} />
+            <Rating value={2} />
+            <Rating value={3} />
+            <Rating value={4} />
+            <Rating value={5} />
         </div>
     );
+}
+
+function RatingTittle (props: any) {
+    return <h2>{props.title}</h2>
 }
 
 export default App;
