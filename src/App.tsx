@@ -88,8 +88,10 @@ function App() {
                 <Message id={message.id} title={message.title} work={message.work} />
             ))}
         <OnOf />
-        {/*<OnOf on={true}/>*/}
-        {/*<OnOf on={false}/>*/}
+        <OnOf />
+        <OnOf />
+        <OnOf />
+
         </div>
     );
 }
