@@ -110,7 +110,11 @@ function App() {
     );
 }
 
-function RatingTittle (props: any) {
+type RatingPropsType = {
+    title: string
+}
+
+function RatingTittle (props: RatingPropsType) {
     return <h2>{props.title}</h2>
 }
 
