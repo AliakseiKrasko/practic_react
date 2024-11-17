@@ -97,12 +97,8 @@ function App() {
             <RatingTittle title={"Hello"}/>
             <RatingTittle title={"Hello world"}/>
 
-            <Rating value={0} />
-            <Rating value={1} />
-            <Rating value={2} />
-            <Rating value={3} />
-            <Rating value={4} />
-            <Rating value={5} />
+
+            <Rating />
             <Accordion titleValue={"Menu"} />
             <Accordion titleValue={"Users"} />
             <Accordion titleValue={"Hello"} />

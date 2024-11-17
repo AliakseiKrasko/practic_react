@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 type AccordionProps = {
     titleValue: string
-    // collapsed: boolean
+
 
 }
 
@@ -21,7 +21,7 @@ export const Accordion = (props: AccordionProps) => {
             {toggle && <AccordionBody/>}
         </div>
     )
-    // toggleOn: () => void
+
 };
 
 type AccordionTitlePropsType = {

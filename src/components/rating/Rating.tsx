@@ -1,32 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
 
-}
+export const Rating = () => {
 
-export const Rating = (props: RatingPropsType) => {
+    let [stars, setStars] = useState([false, false, false, false, false]);
+
+    function StarCelebrate(index: number) {
+        const updatedStars = stars.map((star, i) => (i === index ? !star : star));
+        setStars(updatedStars);
+    }
+
+
+
 
     return (
         <div>
-            <Star selected={props.value > 0}/>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
+            {
+                stars.map((star, i) => (
+                    <div key={i}>
+                        <span>{star ? <b>star</b> : "star"}</span>
+                        <button onClick={()=>StarCelebrate(i)}>Toggle</button>
+                    </div>
+                ))}
+
         </div>
-    );
-}
+    )}
 
-type StarPropsType = {
-    selected: boolean
-}
 
-function Star(props: StarPropsType) {
-    if (props.selected === true) {
-        return <span><b>star </b> </span>
-    } else {
-        return <span>star </span>
-    }
-}
 
