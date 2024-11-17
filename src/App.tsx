@@ -69,6 +69,7 @@ function App() {
     return (
         <div className="App">
             <div className="AppHeader">
+                <h2>{newTasks}</h2>
                 <input onChange={onChangeHandler} value={newTasks} onKeyDown={onKeyDownHundler}></input>
                 <button onClick={addTaskHandler}>Add</button>
             </div>
