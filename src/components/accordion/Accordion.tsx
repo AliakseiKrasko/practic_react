@@ -10,14 +10,10 @@ export const Accordion = (props: AccordionProps) => {
 
     let [toggle, setToggle] = useState(false);
 
-    function toggleOn() {
-        setToggle(!toggle);
-    }
-
     return (
         <div>
             <AccordionTitle title={props.titleValue}/>
-            <button onClick={toggleOn}>Toggle</button>
+            <button onClick={()=>setToggle(!toggle)}>Toggle</button>
             {toggle && <AccordionBody/>}
         </div>
     )
