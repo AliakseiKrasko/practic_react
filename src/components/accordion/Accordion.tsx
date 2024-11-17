@@ -11,23 +11,25 @@ export const Accordion = (props: AccordionProps) => {
     let [toggle, setToggle] = useState(false);
 
     return (
-        <div>
-            <AccordionTitle title={props.titleValue}/>
-            <button onClick={()=>setToggle(!toggle)}>Toggle</button>
+        <div style={{cursor: 'pointer' }}>
+            <AccordionTitle title={props.titleValue} onClick={()=>setToggle(!toggle)}/>
+
             {toggle && <AccordionBody/>}
         </div>
     )
 
 };
 
+
 type AccordionTitlePropsType = {
     title: string
+    onClick: () => void;
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     debugger
     return (
-        <h3>{props.title}</h3>
+        <h3 onClick={props.onClick}>{props.title}</h3>
     )
 }
 
