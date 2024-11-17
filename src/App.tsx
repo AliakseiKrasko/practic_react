@@ -103,9 +103,9 @@ function App() {
             <Rating value={3} />
             <Rating value={4} />
             <Rating value={5} />
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={true}/>
-            <Accordion titleValue={"Hello"} collapsed={false}/>
+            <Accordion titleValue={"Menu"} />
+            <Accordion titleValue={"Users"} />
+            <Accordion titleValue={"Hello"} />
         </div>
     );
 }
